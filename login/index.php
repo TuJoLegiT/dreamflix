@@ -1,0 +1,168 @@
+<?php
+session_start();
+$mensagem = $_SESSION['mensagem'] ?? '';
+unset($_SESSION['mensagem']);
+?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - DreamFlix</title>
+  <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Fundo com imagem desfocada */
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url('assets/bilheteria.jpg') no-repeat center center/cover;
+    filter: blur(1.6px) brightness(0.2); 
+    z-index: -1;
+  }
+
+  .login-container {
+    background-color: rgba(163, 201, 241, 0.9);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(163, 201, 241, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .login-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    width: 40px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .login-container::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 20px;
+    width: 40px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .login-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #000;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+  }
+
+  input[type="submit"] {
+    background-color: #0e0e0e;
+    color: #a3c9f1;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #1a1a1a;
+  }
+
+  .footer-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #333;
+  }
+
+  .login-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .login-links a {
+    color: #0e0e0e;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .login-links a:hover {
+    color: #3a4f66;
+  }
+</style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-title">🎬 DreamFlix Login</div>
+
+    <form action="login.php" method="post"> 
+      <input type="text" name='usuario' placeholder="Usuário" required>
+      <input type="password" name='senha' placeholder="Senha" required>
+      <input type="submit" value="Entrar"> 
+      <div class="login-links">
+      <a href="cadastra.php">Criar conta</a>
+      <span>|</span>
+      <a href="recupera.php">Esqueci minha senha</a>
+    
+  </div>
+    </form>
+
+    <div class="footer-text">Seu ingresso para o mundo do cinema 🎟️</div>
+  </div>
+
+    <?php if (!empty($mensagem)): ?>
+      <div class="mensagem"><?php echo htmlspecialchars($mensagem); ?></div>
+    <?php endif; ?>
+  </div>
+
+</body>
+</html>

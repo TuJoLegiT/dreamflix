@@ -1,0 +1,12 @@
+preciso de um script que faça a interação com o botao
+
+na tela vou ter que ter uma ação (script) 
+
+
+um arquivo de db connect para o banco e o site se enxergarem
+
+
+
+could not find driver = para solucionar precisamos instalar a extensão php no postgres (ou em outro banco se for o caso)
+
+[sudo] apt-get install php-pgsql -- Caso for postgres
