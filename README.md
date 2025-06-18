@@ -29,9 +29,12 @@
 ---
 
 ## 📦 Estrutura do Projeto
+
 dreamflix/
 ├── index.php
+
 ├── login.php
+
 ├── logout.php
 ├── /css
 │ └── styles.css
@@ -42,8 +45,8 @@ dreamflix/
 ├── /vendor
 │ └── phpmailer/
 └── README.md
------
------
+
+
 ## ⚙️ Como executar localmente
 
 > Requisitos: PHP, PostgreSQL, Composer
@@ -65,7 +68,7 @@ psql -U postgres
 
 # Inicie um servidor local
 php -S localhost:8000
-----
+
 🧠 Conceitos em prática
 
 Controle de sessão com PHP
@@ -74,4 +77,4 @@ Esquema de autenticação
 Gerenciamento de dados com PDO e PostgreSQL
 Uso de ALTER TABLE para expansão de schema
 Git e versionamento de código
-------
+
