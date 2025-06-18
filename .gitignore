@@ -1,0 +1,29 @@
+# Ignorar diretórios
+/vendor/
+/config/
+/tmp_testes/
+
+/anotacoes/
+/.idea/
+/.vscode/
+
+# Ignorar arquivos específicos
+composer.lock
+composer.json
+teste_mail.php
+
+# Ignorar qualquer anotação de texto
+*.txt
+
+# Ignorar arquivos temporários e backups
+*.log
+*.bak
+*.swp
+*.tmp
+
+# Ignorar arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos de sessão do PHP (caso gere localmente)
+sess_*
